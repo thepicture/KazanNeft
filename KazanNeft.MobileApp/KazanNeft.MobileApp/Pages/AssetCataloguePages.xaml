@@ -1,12 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KazanNeft.MobileApp.Forms.AssetCataloguePage">
+             x:Class="KazanNeft.MobileApp.Forms.AssetCataloguePage"
+             Title="Asset Catalogue">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="auto,auto,auto,auto,auto,*,auto"
+              Margin="5">
+            <Grid ColumnDefinitions="*,*,*">
+                <Picker x:Name="DepartmentPicker"
+                        SelectedIndex="0"
+                        ItemDisplayBinding="{Binding Name}" />
+                <Picker x:Name="AssetGroupPicker"
+                        Grid.Column="1"
+                        SelectedIndex="0"
+                        ItemDisplayBinding="{Binding Name}" />
+            </Grid>
+            <Label Text="Warranty date range:"
+                   Grid.Row="1" />
+            <Rectangle HeightRequest="1"
+                       Grid.Row="2" />
+            <Grid ColumnDefinitions="*,*"
+                  Grid.Row="3">
+                <DatePicker />
+                <DatePicker />
+            </Grid>
+            <Entry Placeholder="Search"
+                   BackgroundColor="LightGray"
+                   Grid.Row="4" />
+            <Label Text="Asset list:"
+                   Grid.Row="5" />
+            <StackLayout x:Name="AssetList"
+                         Grid.Row="6">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            <Label Text="X assets from Y"
+                   Grid.Row="7" />
+            <Grid Grid.Row="8"
+                  HeightRequest="30"
+                  WidthRequest="30"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center">
+                <Ellipse Fill="blue"
+                         WidthRequest="30"
+                         HeightRequest="30" />
+                <Label Text="+"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
