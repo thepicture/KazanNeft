@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazanNeft.WebApi", "KazanNeft.WebApi\KazanNeft.WebApi.csproj", "{BE4FB247-71A9-4E90-AA7B-066FA7FD7EE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazanNeft.MobileApp.Android", "KazanNeft.MobileApp\KazanNeft.MobileApp.Android\KazanNeft.MobileApp.Android.csproj", "{1F264A37-6A40-48E7-BC2D-B83504568C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazanNeft.MobileApp", "KazanNeft.MobileApp\KazanNeft.MobileApp\KazanNeft.MobileApp.csproj", "{ED76F208-BC7A-4986-A323-2B3F91D85DD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{BE4FB247-71A9-4E90-AA7B-066FA7FD7EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE4FB247-71A9-4E90-AA7B-066FA7FD7EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE4FB247-71A9-4E90-AA7B-066FA7FD7EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F264A37-6A40-48E7-BC2D-B83504568C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F264A37-6A40-48E7-BC2D-B83504568C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F264A37-6A40-48E7-BC2D-B83504568C00}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1F264A37-6A40-48E7-BC2D-B83504568C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F264A37-6A40-48E7-BC2D-B83504568C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F264A37-6A40-48E7-BC2D-B83504568C00}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{ED76F208-BC7A-4986-A323-2B3F91D85DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED76F208-BC7A-4986-A323-2B3F91D85DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED76F208-BC7A-4986-A323-2B3F91D85DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED76F208-BC7A-4986-A323-2B3F91D85DD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

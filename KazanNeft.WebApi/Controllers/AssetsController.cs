@@ -23,12 +23,12 @@ namespace KazanNeft.WebApi.Controllers
                 .ToList()
                 .ConvertAll(asset => new
                 {
-                    ID = asset.ID,
-                    AssetName = asset.AssetName,
-                    AssetSN = asset.AssetSN,
+                    asset.ID,
+                    asset.AssetName,
+                    asset.AssetSN,
                     DepartmentName = asset.DepartmentLocation.Department.Name,
                     AssetGroupName =  asset.AssetGroup.Name,
-                    WarrantyDate = asset.WarrantyDate
+                    asset.WarrantyDate
                 }));
         }
 
