@@ -4,11 +4,10 @@
              x:Class="KazanNeft.MobileApp.Forms.AssetCataloguePage"
              Title="Asset Catalogue">
     <ContentPage.Content>
-        <Grid RowDefinitions="auto,auto,auto,auto,auto,*,auto"
+        <Grid RowDefinitions="auto,auto,auto,auto,auto,*,auto,auto"
               Margin="5">
             <Grid ColumnDefinitions="*,*,*">
                 <Picker x:Name="DepartmentPicker"
-                        SelectedIndex="0"
                         ItemDisplayBinding="{Binding Name}" />
                 <Picker x:Name="AssetGroupPicker"
                         Grid.Column="1"
@@ -22,10 +21,9 @@
             <Grid ColumnDefinitions="*,*"
                   Grid.Row="3">
                 <DatePicker />
-                <DatePicker />
+                <DatePicker Grid.Column="1" />
             </Grid>
             <Entry Placeholder="Search"
-                   BackgroundColor="LightGray"
                    Grid.Row="4" />
             <Label Text="Asset list:"
                    Grid.Row="5" />
@@ -33,24 +31,20 @@
                          Grid.Row="6">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        
+
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            <Label Text="X assets from Y"
-                   Grid.Row="7" />
-            <Grid Grid.Row="8"
-                  HeightRequest="30"
-                  WidthRequest="30"
-                  HorizontalOptions="End"
-                  VerticalOptions="Center">
-                <Ellipse Fill="blue"
-                         WidthRequest="30"
-                         HeightRequest="30" />
-                <Label Text="+"
-                       TextColor="White"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center" />
+            <Grid Grid.Row="7">
+                <Label Text="X assets from Y" VerticalOptions="Center"/>
+                <Button Text="+"
+                        CornerRadius="40"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        VerticalOptions="End" 
+                        FontSize="Large"/>
             </Grid>
         </Grid>
     </ContentPage.Content>

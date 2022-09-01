@@ -22,6 +22,8 @@ namespace KazanNeft.MobileApp.Forms
             };
             DepartmentPicker.ItemsSource = departments;
             AssetGroupPicker.ItemsSource = assetGroups;
+            DepartmentPicker.SelectedIndex = 0;
+            AssetGroupPicker.SelectedIndex = 0;
         }
     }
 }

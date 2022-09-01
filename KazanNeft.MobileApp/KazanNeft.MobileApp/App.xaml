@@ -3,6 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KazanNeft.MobileApp.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="Picker">
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
