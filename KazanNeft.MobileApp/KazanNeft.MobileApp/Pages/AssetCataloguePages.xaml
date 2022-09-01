@@ -5,7 +5,7 @@
              Title="Asset Catalogue"
              Background="white">
     <ContentPage.Content>
-        <Grid RowDefinitions="auto,auto,auto,auto,auto,*,auto,auto"
+        <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,*"
               Margin="5">
             <Grid ColumnDefinitions="*,*,*">
                 <Picker x:Name="DepartmentPicker"
@@ -24,8 +24,9 @@
                 <DatePicker />
                 <DatePicker Grid.Column="1" />
             </Grid>
-            <Entry Placeholder="Search"
-                   Grid.Row="4" />
+            <Editor Placeholder="Search"
+                    Grid.Row="4"
+                    BackgroundColor="#eee" />
             <Label Text="Asset list:"
                    Grid.Row="5"
                    Margin="20,0,0,0" />
@@ -64,19 +65,20 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            <Grid Grid.Row="7">
+            <Grid Grid.Row="7" VerticalOptions="End">
                 <Label x:Name="AssetCount"
                        Text="X assets from Y"
                        VerticalOptions="Center"
-                       Margin="20,0,0,0" 
-                       TextColor="Black"/>
+                       Margin="20,0,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
                 <Button Text="+"
-                        CornerRadius="40"
-                        WidthRequest="80"
-                        HeightRequest="80"
+                        CornerRadius="25"
+                        WidthRequest="50"
+                        HeightRequest="50"
                         Grid.Column="1"
                         HorizontalOptions="End"
-                        VerticalOptions="End"
+                        VerticalOptions="Center"
                         FontSize="Large" />
             </Grid>
         </Grid>

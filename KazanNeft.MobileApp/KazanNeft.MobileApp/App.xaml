@@ -4,6 +4,9 @@
              x:Class="KazanNeft.MobileApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="PrimaryFirst">#E2231A</Color>
+            <Color x:Key="PrimarySecond">#005CB9</Color>
+            <Color x:Key="Secondary">#FFA823</Color>
             <Style TargetType="Picker">
                 <Setter Property="FontSize" Value="Micro"/>
             </Style>
@@ -15,6 +18,12 @@
             </Style>
             <Style TargetType="Entry">
                 <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource PrimarySecond}" />
+                <Setter Property="TextColor"
+                        Value="White" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
