@@ -9,11 +9,13 @@
               Margin="5">
             <Grid ColumnDefinitions="*,*,*">
                 <Picker x:Name="DepartmentPicker"
-                        ItemDisplayBinding="{Binding Name}" />
+                        ItemDisplayBinding="{Binding Name}"
+                        Unfocused="OnDepartmentUnfocused" />
                 <Picker x:Name="AssetGroupPicker"
                         Grid.Column="1"
                         SelectedIndex="0"
-                        ItemDisplayBinding="{Binding Name}" />
+                        ItemDisplayBinding="{Binding Name}"
+                        Unfocused="OnAssetGroupUnfocused" />
             </Grid>
             <Label Text="Warranty date range:"
                    Grid.Row="1" />
@@ -21,10 +23,15 @@
                        Grid.Row="2" />
             <Grid ColumnDefinitions="*,*"
                   Grid.Row="3">
-                <DatePicker />
-                <DatePicker Grid.Column="1" />
+                <DatePicker x:Name="StartDate"
+                            DateSelected="OnStartDateSelected" />
+                <DatePicker x:Name="EndDate"
+                            Grid.Column="1"
+                            DateSelected="OnEndDateSelected" />
             </Grid>
-            <Editor Placeholder="Search"
+            <Editor x:Name="SearchBox"
+                    TextChanged="OnSearchBoxChanged"
+                    Placeholder="Search"
                     Grid.Row="4"
                     BackgroundColor="#eee" />
             <Label Text="Asset list:"
@@ -65,13 +72,14 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            <Grid Grid.Row="7" VerticalOptions="End">
+            <Grid Grid.Row="7"
+                  VerticalOptions="End">
                 <Label x:Name="AssetCount"
                        Text="X assets from Y"
                        VerticalOptions="Center"
                        Margin="20,0,0,0"
                        TextColor="Black"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold" />
                 <Button Text="+"
                         CornerRadius="25"
                         WidthRequest="50"
