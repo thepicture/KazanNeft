@@ -13,23 +13,41 @@ namespace KazanNeft.MobileApp.Forms
         public AssetCataloguePage()
         {
             InitializeComponent();
-            var departments = new List<Department>
-            {
-                new Department { Name = nameof(Department) },
-            };
-            var assetGroups = new List<AssetGroup>
-            {
-                new AssetGroup { Name = "Asset Group" },
-            };
+
+            LoadDepartmentsToPicker();
+            LoadAssetGroupsToPicker();
+
             WebClient client = new WebClient { Encoding = System.Text.Encoding.UTF8 };
             string response = client.DownloadString(Api.AssetsUrl);
             Asset[] assets = JsonConvert.DeserializeObject<Asset[]>(response);
             BindableLayout.SetItemsSource(AssetList, assets);
             AssetCount.Text = assets.Length + " assets from " + assets.Length;
-            DepartmentPicker.ItemsSource = departments;
+        }
+
+        private void LoadAssetGroupsToPicker()
+        {
+            List<AssetGroup> assetGroups = new List<AssetGroup>
+            {
+                new AssetGroup { Name = "Asset Group" },
+            };
+            WebClient client = new WebClient { Encoding = System.Text.Encoding.UTF8 };
+            string response = client.DownloadString(Api.AssetsGroupsUrl);
+            assetGroups.AddRange(JsonConvert.DeserializeObject<AssetGroup[]>(response));
             AssetGroupPicker.ItemsSource = assetGroups;
-            DepartmentPicker.SelectedIndex = 0;
             AssetGroupPicker.SelectedIndex = 0;
+        }
+
+        private void LoadDepartmentsToPicker()
+        {
+            List<Department> departments = new List<Department>
+            {
+                new Department { Name = nameof(Department) },
+            };
+            WebClient client = new WebClient { Encoding = System.Text.Encoding.UTF8 };
+            string response = client.DownloadString(Api.DepartmentsUrl);
+            departments.AddRange(JsonConvert.DeserializeObject<Department[]>(response));
+            DepartmentPicker.ItemsSource = departments;
+            DepartmentPicker.SelectedIndex = 0;
         }
     }
 }

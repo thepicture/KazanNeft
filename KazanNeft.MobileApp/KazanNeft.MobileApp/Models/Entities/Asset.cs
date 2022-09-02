@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace KazanNeft.MobileApp.Models.Entities
 {
@@ -11,6 +9,8 @@ namespace KazanNeft.MobileApp.Models.Entities
         public string AssetSN { get; set; }
         public string DepartmentName { get; set; }
         public string AssetGroupName { get; set; }
+        public int DepartmentID { get; set; }
+        public int AssetGroupID { get; set; }
         public DateTime? WarrantyDate { get; set; }
     }
 }
