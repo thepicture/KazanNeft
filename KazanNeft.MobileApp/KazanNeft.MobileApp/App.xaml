@@ -8,22 +8,36 @@
             <Color x:Key="PrimarySecond">#005CB9</Color>
             <Color x:Key="Secondary">#FFA823</Color>
             <Style TargetType="Picker">
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize"
+                        Value="Micro" />
+                <Setter Property="FontFamily"
+                        Value="Helvetica" />
             </Style>
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize"
+                        Value="Micro" />
+                <Setter Property="FontFamily"
+                        Value="Helvetica" />
             </Style>
             <Style TargetType="DatePicker">
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize"
+                        Value="Micro" />
+                <Setter Property="FontFamily"
+                        Value="Helvetica" />
             </Style>
             <Style TargetType="Entry">
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize"
+                        Value="Micro" />
+                <Setter Property="FontFamily"
+                        Value="Helvetica" />
             </Style>
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor"
                         Value="{StaticResource PrimarySecond}" />
                 <Setter Property="TextColor"
                         Value="White" />
+                <Setter Property="FontFamily"
+                        Value="Helvetica" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

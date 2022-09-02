@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KazanNeft.MobileApp.Forms.AssetCataloguePage"
-             Title="Asset Catalogue"
              Background="white">
+    <NavigationPage.TitleView>
+        <Label Text="Asset Catalogue"
+               FontFamily="MyriadProRegular"
+               TextColor="White"
+               FontSize="Large" />
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,*"
               Margin="5">
@@ -87,7 +92,7 @@
                         Grid.Column="1"
                         HorizontalOptions="End"
                         VerticalOptions="Center"
-                        FontSize="Large" />
+                        FontSize="Medium" />
             </Grid>
         </Grid>
     </ContentPage.Content>

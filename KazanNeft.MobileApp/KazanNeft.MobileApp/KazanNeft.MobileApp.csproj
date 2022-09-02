@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\Helvetica-Normal.ttf" />
+    <None Remove="Resources\Fonts\Helvetica.ttc" />
+    <None Remove="Resources\Fonts\MyriadPro-Regular.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Helvetica-Normal.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Helvetica.ttc" />
+    <EmbeddedResource Include="Resources\Fonts\MyriadPro-Regular.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />

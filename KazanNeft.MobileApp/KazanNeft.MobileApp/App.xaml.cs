@@ -1,8 +1,9 @@
 ﻿using KazanNeft.MobileApp.Forms;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("Helvetica.ttc", Alias = "Helvetica")]
+[assembly: ExportFont("Helvetica-Normal.ttf", Alias = "HelveticaNormal")]
+[assembly: ExportFont("MyriadPro-Regular.otf", Alias = "MyriadProRegular")]
 namespace KazanNeft.MobileApp
 {
     public partial class App : Application
