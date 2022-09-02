@@ -13,6 +13,28 @@
         <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,*"
               Margin="5">
             <Grid ColumnDefinitions="*,*,*">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="LandscapeState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Landscape" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="false" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="VerticalState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Portrait" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="true" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
                 <Picker x:Name="DepartmentPicker"
                         ItemDisplayBinding="{Binding Name}"
                         Unfocused="OnDepartmentUnfocused" />
@@ -23,11 +45,80 @@
                         Unfocused="OnAssetGroupUnfocused" />
             </Grid>
             <Label Text="Warranty date range:"
-                   Grid.Row="1" />
+                   Grid.Row="1">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="LandscapeState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Landscape" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="false" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="VerticalState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Portrait" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="true" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Label>
             <Rectangle HeightRequest="1"
-                       Grid.Row="2" />
+                       Stroke="gray"
+                       Grid.Row="2">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="LandscapeState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Landscape" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="false" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="VerticalState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Portrait" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="true" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Rectangle>
             <Grid ColumnDefinitions="*,*"
                   Grid.Row="3">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="LandscapeState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Landscape" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="false" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="VerticalState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Portrait" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="true" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
                 <DatePicker x:Name="StartDate"
                             DateSelected="OnStartDateSelected" />
                 <DatePicker x:Name="EndDate"
@@ -38,7 +129,30 @@
                     TextChanged="OnSearchBoxChanged"
                     Placeholder="Search"
                     Grid.Row="4"
-                    BackgroundColor="#eee" />
+                    BackgroundColor="#eee">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="LandscapeState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Landscape" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="false" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="VerticalState">
+                            <VisualState.StateTriggers>
+                                <OrientationStateTrigger Orientation="Portrait" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible"
+                                        Value="true" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Editor>
             <Label Text="Asset list:"
                    Grid.Row="5"
                    Margin="20,0,0,0" />
@@ -53,10 +167,78 @@
                                      VerticalOptions="Center"
                                      Fill="gray" />
                             <StackLayout Grid.Column="1">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup>
+                                        <VisualState x:Name="LandscapeState">
+                                            <VisualState.StateTriggers>
+                                                <OrientationStateTrigger Orientation="Landscape" />
+                                            </VisualState.StateTriggers>
+                                            <VisualState.Setters>
+                                                <Setter Property="Orientation"
+                                                        Value="Horizontal" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="VerticalState">
+                                            <VisualState.StateTriggers>
+                                                <OrientationStateTrigger Orientation="Portrait" />
+                                            </VisualState.StateTriggers>
+                                            <VisualState.Setters>
+                                                <Setter Property="Orientation"
+                                                        Value="Vertical" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
                                 <Label Text="{Binding AssetName}"
                                        LineBreakMode="TailTruncation" />
-                                <Label Text="{Binding DepartmentName}" />
-                                <Label Text="{Binding AssetSN}" />
+                                <Label Text="{Binding DepartmentName}">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup>
+                                            <VisualState x:Name="LandscapeState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Landscape" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="TextColor"
+                                                            Value="{StaticResource PrimaryFirst}" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="VerticalState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Portrait" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="TextColor"
+                                                            Value="gray" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Label>
+                                <Label Text="{Binding AssetSN}">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup>
+                                            <VisualState x:Name="LandscapeState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Landscape" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="IsVisible"
+                                                            Value="false" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="VerticalState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Portrait" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="IsVisible"
+                                                            Value="true" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal"
                                          Grid.Column="2">
@@ -67,11 +249,57 @@
                                 <ImageButton WidthRequest="25"
                                              HeightRequest="25"
                                              BackgroundColor="transparent"
-                                             Source="enter" />
+                                             Source="enter">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup>
+                                            <VisualState x:Name="LandscapeState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Landscape" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="IsVisible"
+                                                            Value="false" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="VerticalState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Portrait" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="IsVisible"
+                                                            Value="true" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
                                 <ImageButton WidthRequest="25"
                                              HeightRequest="25"
                                              BackgroundColor="transparent"
-                                             Source="toast" />
+                                             Source="toast">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup>
+                                            <VisualState x:Name="LandscapeState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Landscape" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="IsVisible"
+                                                            Value="false" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="VerticalState">
+                                                <VisualState.StateTriggers>
+                                                    <OrientationStateTrigger Orientation="Portrait" />
+                                                </VisualState.StateTriggers>
+                                                <VisualState.Setters>
+                                                    <Setter Property="IsVisible"
+                                                            Value="true" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
                             </StackLayout>
                         </Grid>
                     </DataTemplate>
