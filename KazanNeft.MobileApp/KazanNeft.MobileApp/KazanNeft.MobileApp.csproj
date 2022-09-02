@@ -29,13 +29,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\AssetCataloguePages.xaml.cs">
-      <DependentUpon>AssetCataloguePages.xaml</DependentUpon>
+    <Compile Update="Pages\AssetCataloguePage.xaml.cs">
+      <DependentUpon>AssetCataloguePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\AssetCataloguePages.xaml">
+    <EmbeddedResource Update="Pages\AssetCataloguePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\AssetInformationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

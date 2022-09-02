@@ -1,4 +1,6 @@
 ﻿using KazanNeft.MobileApp.Models.Entities;
+using KazanNeft.MobileApp.Models.Loaders;
+using KazanNeft.MobileApp.Pages;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -62,27 +64,17 @@ namespace KazanNeft.MobileApp.Forms
 
         private void LoadAssetGroupsToPicker()
         {
-            List<AssetGroup> assetGroups = new List<AssetGroup>
-            {
-                new AssetGroup { Name = "Asset Group" },
-            };
-            WebClient client = new WebClient { Encoding = System.Text.Encoding.UTF8 };
-            string response = client.DownloadString(Api.AssetsGroupsUrl);
-            assetGroups.AddRange(JsonConvert.DeserializeObject<AssetGroup[]>(response));
-            AssetGroupPicker.ItemsSource = assetGroups;
+            AssetGroupPicker.ItemsSource = new AssetGroupLoader()
+                .Load()
+                .ToList();
             AssetGroupPicker.SelectedIndex = 0;
         }
 
         private void LoadDepartmentsToPicker()
         {
-            List<Department> departments = new List<Department>
-            {
-                new Department { Name = nameof(Department) },
-            };
-            WebClient client = new WebClient { Encoding = System.Text.Encoding.UTF8 };
-            string response = client.DownloadString(Api.DepartmentsUrl);
-            departments.AddRange(JsonConvert.DeserializeObject<Department[]>(response));
-            DepartmentPicker.ItemsSource = departments;
+            DepartmentPicker.ItemsSource = new DepartmentLoader()
+                .Load()
+                .ToList();
             DepartmentPicker.SelectedIndex = 0;
         }
 
@@ -112,6 +104,12 @@ namespace KazanNeft.MobileApp.Forms
         private void OnEndDateSelected(object sender, DateChangedEventArgs e)
         {
             FilterAssets();
+        }
+
+        private async void OnNavigateToAddNewAsset(object sender, EventArgs e)
+        {
+            AssetInformationPage page = new AssetInformationPage();
+            await Navigation.PushAsync(page);
         }
     }
 }

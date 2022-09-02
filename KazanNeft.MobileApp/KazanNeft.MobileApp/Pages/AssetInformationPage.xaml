@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KazanNeft.MobileApp.Pages.AssetInformationPage"
+             Background="white"
+             Padding="5">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Label Text="Asset Information"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   FontFamily="MyriadProRegular"
+                   TextColor="White"
+                   FontSize="Large" />
+            <Button Text="Back"
+                    Clicked="OnNavigateBack"
+                    HorizontalOptions="End" />
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,*,auto">
+            <Entry Placeholder="Asset Name" />
+            <Grid Grid.Row="1"
+                  ColumnDefinitions="2*,3*">
+                <Picker x:Name="DepartmentPicker"
+                        ItemDisplayBinding="{Binding Name}" />
+                <Picker x:Name="LocationPicker"
+                        ItemDisplayBinding="{Binding Name}"
+                        Grid.Column="1" />
+            </Grid>
+            <Grid Grid.Row="2"
+                  ColumnDefinitions="2*,3*">
+                <Picker x:Name="AssetGroupPicker"
+                        ItemDisplayBinding="{Binding Name}" />
+                <Picker x:Name="AccountablePartyPicker"
+                        Grid.Column="1" />
+            </Grid>
+            <Editor MinimumHeightRequest="100"
+                    Grid.Row="3"
+                    Placeholder="Asset Description, 
+                    
+                    Multi Line" />
+            <Grid Grid.Row="4"
+                  ColumnDefinitions="*,*">
+                <DatePicker />
+                <Grid Grid.Column="1"
+                      ColumnDefinitions="auto,*">
+                    <Label Text="Asset SN:"
+                           VerticalOptions="Center" />
+                    <Entry Placeholder="dd/gg/nnnn"
+                           Grid.Column="1" />
+                </Grid>
+            </Grid>
+            <StackLayout Grid.Row="5"
+                         Orientation="Horizontal"
+                         HorizontalOptions="End">
+                <Button Text="Capture Image" />
+                <Button Text="Browse" />
+            </StackLayout>
+            <StackLayout x:Name="Pictures"
+                         Grid.Row="6">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="auto,*">
+                            <Image />
+                            <Label Grid.Column="1" />
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            <StackLayout Grid.Row="7"
+                         Orientation="Horizontal"
+                         HorizontalOptions="End">
+                <Button Text="Submit" />
+                <Button Text="Cancel"
+                        TextTransform="Uppercase"
+                        Clicked="OnNavigateBack" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

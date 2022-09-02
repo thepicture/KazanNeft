@@ -6,7 +6,7 @@
     <NavigationPage.TitleView>
         <Label Text="Asset Catalogue"
                FontFamily="MyriadProRegular"
-               TextColor="White"
+               TextColor="white"
                FontSize="Large" />
     </NavigationPage.TitleView>
     <ContentPage.Content>
@@ -160,7 +160,7 @@
                          Grid.Row="6">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="auto, *, auto"
+                        <Grid ColumnDefinitions="auto,*,auto"
                               Margin="20,0,0,0">
                             <Ellipse WidthRequest="30"
                                      HeightRequest="30"
@@ -314,6 +314,7 @@
                        TextColor="Black"
                        FontAttributes="Bold" />
                 <Button Text="+"
+                        Clicked="OnNavigateToAddNewAsset"
                         CornerRadius="25"
                         WidthRequest="50"
                         HeightRequest="50"
