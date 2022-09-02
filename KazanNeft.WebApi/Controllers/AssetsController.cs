@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using KazanNeft.WebApi.Models.Entities;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using KazanNeft.WebApi.Models.Entities;
 
 namespace KazanNeft.WebApi.Controllers
 {
     public class AssetsController : ApiController
     {
-        private BaseEntities db = new BaseEntities();
+        private readonly BaseEntities db = new BaseEntities();
 
         // GET: api/Assets
         public IHttpActionResult GetAssets()
@@ -27,7 +23,9 @@ namespace KazanNeft.WebApi.Controllers
                     asset.AssetName,
                     asset.AssetSN,
                     DepartmentName = asset.DepartmentLocation.Department.Name,
-                    AssetGroupName =  asset.AssetGroup.Name,
+                    AssetGroupName = asset.AssetGroup.Name,
+                    DepartmentID = asset.DepartmentLocation.Department.ID,
+                    AssetGroupID = asset.AssetGroup.ID,
                     asset.WarrantyDate
                 }));
         }
